@@ -1,0 +1,5 @@
+@baseUrl = http://localhost:43861
+
+
+GET {{baseUrl}}/admin/Authors?$expand=books
+
