@@ -1,5 +1,6 @@
-@baseUrl = http://localhost:43861
+@baseUrl = http://localhost:45959
 
 
-GET {{baseUrl}}/admin/Authors?$expand=books
 
+GET {{baseUrl}}/admin/books
+Accept-Language: de

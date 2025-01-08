@@ -2,6 +2,8 @@ namespace  learning;
 using { 
 cuid,
 managed,
+Currency,
+Country,
 sap.common.CodeList
  } from '@sap/cds/common';
 
@@ -11,7 +13,7 @@ entity books: cuid, managed{
     tile   : localized String(255);
     author : Association to Authors;
     genre  : Genre;
-    publCountry : String(3);
+    publCountry : Country;
     stock : NoofBooks;
     price : price;
     isHardcover: Boolean;
@@ -32,7 +34,7 @@ type NoofBooks : Integer;
 type price {
 
     amount : Decimal;
-    currency: String(3);
+    currency: Currency;
 }
 
 
