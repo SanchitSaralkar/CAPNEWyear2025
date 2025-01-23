@@ -10,11 +10,11 @@ sap.common.CodeList
 
 entity books: cuid, managed{
 
-    tile   : localized String(255);
-    author : Association to Authors;
-    genre  : Genre;
+    tile   : localized String(255) @mandatory;
+    author : Association to Authors @mandatory @assert.target;
+    genre  : Genre @assert.range: true;
     publCountry : Country;
-    stock : NoofBooks;
+    stock : NoofBooks default 0;
     price : price;
     isHardcover: Boolean;
 
@@ -39,10 +39,10 @@ type price {
 
 
 entity Authors: cuid , managed {
-name : String(100);
+name : String(100) @mandatory;
 dateodBirth : Date;
 dateofDeath: Date;
-Epoch : Association to  Epochs;
+Epoch : Association to  Epochs @assert.target;
 books: Association to many books
 on books.author = $self;
 
