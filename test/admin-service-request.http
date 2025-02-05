@@ -22,10 +22,10 @@ Content-Type: application/json
 
 {
     
-    "name" : " ",
+    "name" : "Friedrich Schiller",
     "dateodBirth" : "1564-04-26",
-    "dateofDeath" : "1584-04-26",
-    "Epoch_id" : {"ID" : 190}
+    "dateofDeath" : "1554-04-26"
+   
 
 
 }
@@ -34,3 +34,26 @@ Content-Type: application/json
 ###to fetch the data 
 GET {{baseUrl}}/admin/Authors
 Accept-Language: de
+
+
+#### create new 
+
+POST {{baseUrl}}/admin/Authors
+Content-Type: application/json
+
+{
+    
+    "name" : "THird version"
+}
+
+
+#### read etag 
+
+GET {{baseUrl}}/admin/Authors({{ID}})
+
+@Etag1 = {{createNewAuthor.respo}}
+
+
+
+####################
+post 

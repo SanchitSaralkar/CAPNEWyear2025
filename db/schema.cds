@@ -51,3 +51,13 @@ on books.author = $self;
 entity  Epochs: CodeList {
     key id : Integer;
 }
+
+annotate books with 
+{
+modifiedAt  @odata.etag
+}
+
+annotate Authors with 
+{
+modifiedAt  @odata.etag
+}
